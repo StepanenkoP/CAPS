@@ -1,0 +1,377 @@
+@import "bourbon/bourbon"
+@import "fonts"
+
+$main-color: #0e1a21
+$accent-color: #e40000
+
+*
+	padding: 0
+	margin: 0
+
+body
+	min-width: 320px
+	font-size: 16px
+	position: relative
+	font-family: "HelveticaNeueCyr-Light", sans-serif
+	color: rgb(14, 26, 33)
+	line-height: 1.875
+
+a
+	outline: none !important
+
+strong
+	font-family: "HelveticaNeueCyr-Medium", sans-serif
+	font-weight: normal
+
+
+h1
+	font-size: 7vw
+	line-height: 0.928
+	letter-spacing: 3px
+	text-transform: uppercase
+	font-family: "GeometricBold", sans-serif
+
+h2
+	font-family: "GeometricBold", sans-serif
+	line-height: 1.2
+	font-size: 5vw
+	font-weight: normal
+
+.text_left
+	text-align: left
+
+.text_right
+	text-align: right
+
+.no_scroll
+	overflow: hidden
+
+section
+	max-height: 1080px
+
+.view_button
+	position: relative
+	padding-left: 2.5vw
+	display: inline-block
+	&:hover
+		a
+			color: $main-color
+		&::before
+			background-color: $main-color
+	a
+		display: block
+		color: $accent-color
+		text-decoration: none
+		font-size: 0.8vw
+		transition: color .3s ease
+	&::before
+		content: ''
+		position: absolute
+		width: 1.8vw
+		background-color: $accent-color
+		height: 0.4vh
+		left: 0
+		top: 45%
+		transition: background-color .3s ease
+///////////////MAIN WRAPPER
+#main_wrapper
+	position: relative
+
+.main_mnu
+	position: absolute
+	right: -6vw
+	top: 0
+	width: 6vw
+	background-color: $main-color
+	z-index: 1000
+	&__logo
+		padding: 1.3vh 0
+		background-color: #fff
+		text-align: center
+	&__lang
+		margin-top: 10%
+		text-align: center
+		position: relative
+		font-size: 1.5vw
+		font-family: "HelveticaNeueCyr-Medium", sans-serif
+		&:hover
+			.title
+				color: $accent-color
+				opacity: 1
+			ul
+				top: 12%
+				margin-top: 30%
+				opacity: 1
+		.title
+			color: #fff
+			opacity: .28
+			cursor: pointer
+		ul
+			position: absolute
+			width: 100%
+			list-style-type: none
+			top: -9999px
+			margin-top: 50%
+			opacity: 0
+			transition: margin-top .3s ease, opacity .3s ease
+			li
+				transition: background-color .3s ease
+				cursor: pointer
+				&:hover
+					background-color: rgba(255,255,255, .1)
+				a
+					text-decoration: none
+					color: #fff
+					opacity: .28
+	&__open
+		position: absolute
+		top: 50%
+		width: 100%
+		text-align: center
+		margin-top: -15px
+		.mnu_button
+			width: 2.1vw
+			height: 2.1vw
+			display: inline-block
+			vertical-align: middle
+			cursor: pointer
+			position: relative
+			overflow: hidden
+			.burger
+				display: block
+				width: 2.1vw
+				height: .21vw
+				background-color: #fff
+				position: absolute
+				transition: left .2s ease
+				&:first-child
+					top: 0
+				&:nth-child(2)
+					top: .55vw
+					left: -0.9vw
+				&:nth-child(3)
+					top: 1.05vw
+					left: -0.5vw
+				&:last-child
+					top: 1.55vw
+					left: -0.5vw
+			&:hover
+				.burger
+					left: 0 
+		.close
+			display: none
+			color: #fff
+			font-size: 2.2vw
+			cursor: pointer
+	&__socials
+		position: absolute
+		bottom: 10px
+		width: 100%
+		text-align: center
+		font-size: 2.5vw
+		cursor: pointer
+		&:hover
+			box-shadow: 0px 0 20px #000
+			>i
+				color: red
+			ul
+				top: -220%
+				opacity: 1
+		>i
+			display: inline-block
+			color: #fff
+			position: relative
+			transition: color .3s ease
+		ul
+			position: absolute
+			text-align: center
+			width: 100%
+			top: 9999px
+			opacity: 0
+			transition: top .3s ease, opacity .3s ease
+			li
+				display: block
+				appearance: none
+				margin-bottom: 15%
+				&:last-child
+					&:hover
+						a
+							color: #E62117
+							opacity: .5
+				&:nth-child(2)
+					&:hover
+						a
+							color: #1DA1F2
+							opacity: .5
+				&:first-child
+					&:hover
+						a
+							color: #3C5998
+							opacity: .5
+				a
+					color: #fff
+					text-decoration: none
+				i
+					display: block
+
+.big_mnu
+	position: fixed
+	z-index: 10
+	transition: transform .3s ease
+	&__img
+		background-color: #F3F2F2
+		text-align: center
+		z-index: 11
+		padding: 1.3vh 0
+		a
+			display: block
+			padding: 11px 0
+			img
+				height: 60px
+	&__content
+		background-color: $main-color
+		color: #fff
+		padding: 4vh 5vw 5vw 5vw
+		h3
+			font-weight: normal
+			font-size: 1.8vw
+			line-height: 1.429
+			strong
+				font-family: "HelveticaNeueCyr-Bold", sans-serif
+		.nav_mnu
+			margin-top: 3vw
+			font-family: "HelveticaNeueCyr-Thin", sans-serif
+			&__left
+				list-style-type: none
+				width: 40%
+				float: left
+				li
+					margin-bottom: 0.6vw
+					&.active
+						font-family: "HelveticaNeueCyr-Bold", sans-serif
+						position: relative
+						padding-left: 2.5vw
+						&::before
+							content: ''
+							background-color: $accent-color
+							width: 1.7vw
+							height: .2vw
+							top: 48%
+							left: 0
+							display: inline-block
+							position: absolute
+					a
+						text-decoration: none
+						display: block
+						color: #fff
+						font-size: 1vw
+						&:hover
+							font-family: "HelveticaNeueCyr-Bold", sans-serif
+			&__right
+				list-style-type: none
+				width: 60%
+				float: left
+				li
+					margin-bottom: 0
+					a
+						text-decoration: none
+						color: #fff
+						font-size: .9vw
+	&__dark
+		position: absolute
+		top: 0
+		right: -100vw
+		background-color: #000
+		opacity: .5
+		width: 100vw
+		height: 100vh
+	.no_dark
+		opacity: 0
+		top: -9999px
+			
+.opened
+	transition: transform .3s ease
+
+
+section
+	max-height: 1080px
+
+///////////////TOP SECTION
+.s_top
+	background-image: url(../img/header.png)
+	background-size: cover
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		background-color: transparentize(#060A0C, .2)
+	&__content
+		position: relative
+		margin: 0 auto
+		width: 78.125%
+		&__text
+			color: #fff
+			text-align: right
+			position: absolute
+			right: 0
+			top: 18%
+			h1
+				&::after
+					content: ''
+					position: absolute
+					height: .1vw
+					width: 27%
+					bottom: -10%
+					right: 0
+					background-color: #7E8082
+			>p
+				font-family: "HelveticaNeueCyr-Thin", sans-serif
+				line-height: 1.2
+				font-size: 1.2vw	
+				color: #DADBDD
+				position: absolute
+				bottom: -55%
+				right: 0				
+		&__caps
+			position: absolute
+			bottom: 15%
+			p
+				font-size: 2.5vw
+				font-family: "Cormorant-Italic", sans-serif	
+				line-height: 1.2
+				color: #DADBDD
+				span
+					font-weight: 800
+				&:last-child
+					font-size: 1vw
+					margin-top: 20px
+					font-family: "HelveticaNeueCyr-Light", sans-serif
+					span
+						font-weight: normal
+						color: #5B5E61
+						font-size: .9vw
+		&__button
+			text-align: center
+			position: absolute
+			bottom: 0
+			left: 50%
+			.arrow_bottom
+				display: inline-block
+				cursor: pointer
+				color: #373A3C
+				font-size: .9vw
+				transition: color .3s ease
+				i
+					font-size: 2.5vw
+				&:hover
+					color: #919496
+
+.no-logo
+	background-color: #F3F2F2
+	img
+		opacity: 0							
+
